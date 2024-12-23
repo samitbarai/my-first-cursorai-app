@@ -8,11 +8,13 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<MenuPage />} />
-            <Route path="/cart" element={<CartPage />} />
-          </Routes>
+        <div className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+          <div className="min-h-screen bg-white md:max-w-3xl lg:max-w-4xl mx-auto shadow-sm">
+            <Routes>
+              <Route path="/" element={<MenuPage />} />
+              <Route path="/cart" element={<CartPage />} />
+            </Routes>
+          </div>
         </div>
       </Router>
     </CartProvider>

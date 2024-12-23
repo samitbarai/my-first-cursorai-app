@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './MenuPage.css';
 import MenuItem from './MenuItem';
 import menuData from '../data/menuItems.json';
 import { FiSearch, FiShoppingCart } from 'react-icons/fi';
@@ -19,39 +18,30 @@ function MenuPage() {
     item.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const menuItemsRef = useRef(null);
-
-  const toggleAccordion = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <div className="container">
-      <header className="header">
-        <div className="header-content">
-          <h1 className="restaurant-name">The Belgian Waffle Co.</h1>
-          <p className="delivery-time">40-45 mins</p>
+    <div className="max-w-3xl mx-auto p-4">
+      <header className="flex justify-between items-start mb-6">
+        <div>
+          <h1 className="text-2xl font-bold">The Belgian Waffle Co.</h1>
+          <p className="text-gray-600">40-45 mins</p>
         </div>
-        <div className="header-actions">
-          <div className="search-container">
+        
+        <div className="flex items-center gap-4">
+          <div className="relative">
             {isSearchVisible && (
               <input
                 type="text"
-                className="search-input"
+                className="w-64 px-4 py-2 pr-10 border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 placeholder="Search menu..."
                 value={searchQuery}
-                onChange={handleSearchChange}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 autoFocus
               />
             )}
             <button 
-              className="search-button"
+              className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
               onClick={() => {
                 setIsSearchVisible(!isSearchVisible);
                 if (!isSearchVisible) {
@@ -62,29 +52,34 @@ function MenuPage() {
               <FiSearch size={24} />
             </button>
           </div>
+          
           <button 
-            className="cart-button"
+            className="relative p-2 text-gray-600 hover:text-gray-900 transition-colors"
             onClick={() => navigate('/cart')}
           >
             <FiShoppingCart size={24} />
             {cartItemsCount > 0 && (
-              <span className="cart-count">{cartItemsCount}</span>
+              <span className="absolute -top-1 -right-1 bg-primary text-white text-xs font-medium px-2 py-0.5 rounded-full min-w-[1.25rem] text-center">
+                {cartItemsCount}
+              </span>
             )}
           </button>
         </div>
       </header>
 
-      <section className="menu-section">
+      <section>
         <div 
-          className={`section-wrapper ${isExpanded ? 'expanded' : ''}`}
-          onClick={toggleAccordion}
+          className="cursor-pointer select-none"
+          onClick={() => setIsExpanded(!isExpanded)}
         >
-          <div className="section-header">
-            <h2 className="section-title">
+          <div className="flex justify-between items-center py-4 border-b">
+            <h2 className="text-xl font-semibold">
               Recommended ({filteredMenuItems.length})
             </h2>
             <button 
-              className={`expand-button ${isExpanded ? 'expanded' : ''}`}
+              className={`p-2 text-gray-600 transition-transform duration-200 ${
+                isExpanded ? 'rotate-180' : ''
+              }`}
               aria-label={isExpanded ? 'Collapse menu' : 'Expand menu'}
             >
               <svg
@@ -103,11 +98,10 @@ function MenuPage() {
           </div>
         </div>
 
-        <div 
-          className={`menu-items-wrapper ${isExpanded ? 'expanded' : ''}`}
-          ref={menuItemsRef}
-        >
-          <div className="menu-items">
+        <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
+          isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="space-y-4 py-4">
             {filteredMenuItems.map((item) => (
               <MenuItem 
                 key={item.id} 
