@@ -46,3 +46,55 @@ button {
 button:hover {
   background-color: #218838;
 }
+
+.veg-indicator {
+  width: 16px;
+  height: 16px;
+  border: 1px solid green;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.veg-inner {
+  color: green;
+  font-size: 10px;
+}
+
+.rupee-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 2px;
+}
+
+.star-icon {
+  color: #ffd700;
+  margin-right: 2px;
+  font-size: 16px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating-score {
+  display: flex;
+  align-items: center;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.customizable {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.edit-icon {
+  font-size: 14px;
+}

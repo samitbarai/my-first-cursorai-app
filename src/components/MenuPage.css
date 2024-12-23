@@ -7,7 +7,7 @@
   .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1.5rem;
   }
   
@@ -21,29 +21,45 @@
   }
   
   .search-button {
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    color: #666;
+    transition: color 0.2s ease;
+  }
+  
+  .search-button:hover {
+    color: #333;
+    background: transparent;
   }
   
   .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    padding: 1rem 0;
   }
   
   .section-title {
     font-size: 1.25rem;
     font-weight: 600;
+    padding-left: 0;
   }
   
   .expand-button {
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    color: #666;
+    transition: color 0.2s ease;
+    margin-right: 0.5rem;
+  }
+  
+  .expand-button:hover {
+    color: #333;
+    background: transparent;
   }
   
   .menu-items {
@@ -123,36 +139,244 @@
   }
   
   .menu-card-image {
-    width: 8rem;
+    width: 150px;
+    height: 100%;
     position: relative;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-between;
   }
   
   .item-image {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
     border-radius: 0.5rem;
     object-fit: cover;
   }
   
-  .add-button {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    color: #22c55e;
-    border: none;
-    padding: 0.5rem 1rem;
+  .add-button, .quantity-counter {
+    position: static;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #e3e3e3;
     border-radius: 0.25rem;
     font-weight: 500;
+    background-color: white;
+  }
+  
+  .add-button {
+    color: #22c55e;
     cursor: pointer;
     transition: all 0.2s;
   }
-  
+
   .add-button:hover {
-    background-color: #f8f8f8;
-    color: #15803d;
+    /* color: #333; */
+    background: transparent;
   }
+  
+  
+  .quantity-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  .counter-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    color: #22c55e;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+  
+  .counter-button:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .quantity {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+    color: #22c55e;
+  }
+  
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+  }
+  
+  .search-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  
+  .search-icon {
+    color: #666;
+    font-size: 20px;
+    margin-right: 8px;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  
+  .search-input::placeholder {
+    color: #999;
+  }
+  
+  /* Add hover and focus effects */
+  .search-box:hover {
+    border-color: #28a745;
+  }
+  
+  .search-box:focus-within {
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .search-box {
+      max-width: 90%;
+    }
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .highlight {
+    background-color: #ffff8e;
+    /* padding: 0 2px; */
+    /* border-radius: 2px; */
+  }
+  
+  .section-wrapper {
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .section-wrapper.expanded {
+    border-bottom: none;
+  }
+  
+  .section-header {
+    padding: 1rem 0;
+  }
+  
+  .menu-items-wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .menu-items-wrapper.expanded {
+    height: auto;
+  }
+  
+  .expand-button {
+    transition: transform 0.3s ease;
+  }
+  
+  .expand-button.expanded {
+    transform: rotate(180deg);
+  }
+  
+  /* Ensure the menu items animate smoothly */
+  .menu-items {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+  
+  .menu-items-wrapper.expanded .menu-items {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Make the header more visually interactive */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Optional: Add a subtle border */
+  .section-wrapper {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .counter-button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .counter-button:disabled:hover {
+    background-color: white;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cart-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #666;
+    transition: color 0.2s ease;
+  }
+  
+  .cart-button:hover {
+    color: #333;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #22c55e;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.125rem 0.375rem;
+    border-radius: 1rem;
+    min-width: 1.25rem;
+    text-align: center;
+  }
+  
   
   

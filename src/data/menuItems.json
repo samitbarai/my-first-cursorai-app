@@ -7,7 +7,7 @@
         "rating": 5.0,
         "reviews": 3,
         "description": "Buy Chocolate Mini Waffle Combo pack of 6 and select 1 FREE waffle or pancake from our top picks.",
-        "image": "/images/waffle1.jpg",
+        "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=500&fit=crop",
         "isVeg": true
       },
       {
@@ -17,7 +17,7 @@
         "rating": 5.0,
         "reviews": 3,
         "description": "Choose any one double layer waffle cake- Death by chocolate Waffle Cake (Double Layer)/ Red velvet waffle Cake (Double Layer)/ Kiki and Or...",
-        "image": "/images/waffle2.jpg",
+        "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=500&fit=crop",
         "isVeg": true
       },
       {
@@ -25,7 +25,95 @@
         "name": "The Belgian Club + 1 Free Delight (Milk)",
         "price": 467.13,
         "description": "Buy Belgian chocolate [Milk] waffle and select 1 FREE waffle or pancake from our top picks.",
-        "image": "/images/waffle3.jpg",
+        "image": "https://images.unsplash.com/photo-1504113888839-1c8eb50233d3?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 4,
+        "name": "Happiness in mini version + 1 FREE Delight",
+        "price": 511.19,
+        "rating": 5.0,
+        "reviews": 3,
+        "description": "Buy Chocolate Mini Waffle Combo pack of 6 and select 1 FREE waffle or pancake from our top picks.",
+        "image": "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 5,
+        "name": "Keep Cake & Celebrate",
+        "price": 580.52,
+        "rating": 5.0,
+        "reviews": 3,
+        "description": "Choose any one double layer waffle cake- Death by chocolate Waffle Cake (Double Layer)/ Red velvet waffle Cake (Double Layer)/ Kiki and Or...",
+        "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 6,
+        "name": "The Belgian Club (Cream)",
+        "price": 467.13,
+        "description": "Buy Belgian chocolate [Milk] waffle and select 1 FREE waffle or pancake from our top picks.",
+        "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 7,
+        "name": "Nutella Banana Supreme",
+        "price": 399.99,
+        "rating": 4.8,
+        "reviews": 12,
+        "description": "Fresh Belgian waffle topped with premium Nutella spread, sliced bananas, and whipped cream.",
+        "image": "https://images.unsplash.com/photo-1504113888839-1c8eb50233d3",
+        "isVeg": true
+      },
+      {
+        "id": 8,
+        "name": "Berry Blast Pancake Stack",
+        "price": 449.99,
+        "rating": 4.9,
+        "reviews": 8,
+        "description": "Stack of 4 fluffy pancakes served with mixed berry compote, maple syrup, and butter.",
+        "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 9,
+        "name": "Caramel Cookie Butter Waffle",
+        "price": 489.99,
+        "rating": 4.7,
+        "reviews": 15,
+        "description": "Crispy waffle topped with speculoos cookie butter, caramel sauce, and crushed cookies.",
+        "image": "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 10,
+        "name": "Classic American Breakfast",
+        "price": 599.99,
+        "rating": 4.6,
+        "reviews": 20,
+        "description": "Two pancakes served with eggs, hash browns, and maple syrup. Perfect breakfast combination!",
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&h=500&fit=crop",
+        "isVeg": false
+      },
+      {
+        "id": 11,
+        "name": "Dark Chocolate Overload",
+        "price": 529.99,
+        "rating": 4.9,
+        "reviews": 18,
+        "description": "Belgian chocolate waffle topped with dark chocolate sauce, chocolate chips, and chocolate ice cream.",
+        "image": "https://images.unsplash.com/photo-1559622214-f8a9850965bb?w=500&h=500&fit=crop",
+        "isVeg": true
+      },
+      {
+        "id": 12,
+        "name": "Fresh Fruit Waffle Paradise",
+        "price": 469.99,
+        "rating": 4.8,
+        "reviews": 14,
+        "description": "Light and crispy waffle topped with seasonal fresh fruits, honey, and vanilla ice cream.",
+        "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop",
         "isVeg": true
       }
     ]
