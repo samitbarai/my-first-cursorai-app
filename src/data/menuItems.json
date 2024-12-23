@@ -1,0 +1,32 @@
+{
+    "menuItems": [
+      {
+        "id": 1,
+        "name": "Happiness in mini version + 1 FREE Delight",
+        "price": 511.19,
+        "rating": 5.0,
+        "reviews": 3,
+        "description": "Buy Chocolate Mini Waffle Combo pack of 6 and select 1 FREE waffle or pancake from our top picks.",
+        "image": "/images/waffle1.jpg",
+        "isVeg": true
+      },
+      {
+        "id": 2,
+        "name": "Keep Cake & Celebrate + 1 FREE Delight",
+        "price": 580.52,
+        "rating": 5.0,
+        "reviews": 3,
+        "description": "Choose any one double layer waffle cake- Death by chocolate Waffle Cake (Double Layer)/ Red velvet waffle Cake (Double Layer)/ Kiki and Or...",
+        "image": "/images/waffle2.jpg",
+        "isVeg": true
+      },
+      {
+        "id": 3,
+        "name": "The Belgian Club + 1 Free Delight (Milk)",
+        "price": 467.13,
+        "description": "Buy Belgian chocolate [Milk] waffle and select 1 FREE waffle or pancake from our top picks.",
+        "image": "/images/waffle3.jpg",
+        "isVeg": true
+      }
+    ]
+  }
